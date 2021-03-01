@@ -1,0 +1,23 @@
+body {
+    margin: 10px 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+p {
+    width: 600px;
+    font-size: 18px;
+}   
+
+div {
+    background-color: rgb(175, 175, 175);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.div_branca {
+    background-color: white;
+    display: flex;
+    align-items:flex-end;
+}
