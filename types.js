@@ -1,0 +1,10 @@
+let string = "Kaller";
+let num = 9.99;
+let boolean = true;
+let nula = null;
+let undef = undefined;
+console.log(typeof string);
+console.log(typeof num);
+console.log(typeof boolean);
+console.log(typeof nula);
+console.log(typeof undef);
