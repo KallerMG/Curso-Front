@@ -17,3 +17,33 @@ function testaSinal(num1, num2) {
         console.log("Subtração entre números de mesmo sinal");
     }
 };
+
+const user = {
+    nome: 'Usuário',
+    idade: 25,
+    endereco: {
+        rua: 'Rua central',
+        numero: 1
+    },
+    projetos: ['Projeto 1', 'Projeto 2']
+}
+// pontos
+console.log(user.nome);
+console.log(user.endereco.rua);
+console.log(user.projetos[1]);
+
+// colchetes
+console.log(user["nome"]);
+console.log(user["endereco"]["rua"]);
+console.log(user["projetos"][1]);
+
+//utilizando var
+
+let endereco_var = "endereco";
+let numero_da_rua_var = "numero";
+console.log(user[endereco_var][numero_da_rua_var]);
+
+
+
+
+
