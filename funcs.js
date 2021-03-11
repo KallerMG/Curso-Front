@@ -62,3 +62,60 @@ const resultado_5 = colaboradores.some(colab => {
 console.log("Existe algum estagiário?", resultado_5);
 
 
+const resultadoD2_1_a = colaboradores.reduce((acumulador, colab) => {
+    return acumulador + colab.idade;
+}, 0);
+
+console.log("Soma das idades:", resultadoD2_1_a);
+
+const resultadoD2_1_b = colaboradores.reduce((acc, colab) => Object.assign(acc, { [colab.cargo]: acc[colab.cargo] ? acc[colab.cargo] + 1 : 1 }), {});
+
+console.log("Resultado D2 1 b:", resultadoD2_1_b);
+
+// Colaboradores crescente
+///const resultadoD2_2_a = colaboradores.sort((a, b) => {
+// return a.idade - b.idade;
+//});
+
+//console.log("Resultado D2 2 a:", colaboradores);
+
+// Colaboradores decrescente
+///const resultadoD2_2_b = colaboradores.sort((a, b) => {
+// return b.idade - a.idade;
+//});
+
+//console.log("Resultado D2 2 b:", colaboradores);
+
+
+/* const resultadoD2_2_c = colaboradores.sort((a, b) => {
+    let pesos = {
+        'back-end': 3,
+        'front-end': 2,
+        'designer': 4,
+        'estagiario': 1
+    };
+    return pesos[a.cargo] - pesos[b.cargo];
+});
+
+console.log("Resultado D2 2 c:", resultadoD2_2_c); */
+
+const resultadoD2_2_d = colaboradores.sort((a, b) => {
+    let pesos = {
+        'back-end': 3,
+        'front-end': 2,
+        'designer': 4,
+        'estagiario': 1
+    };
+    if (a.idade > b.idade) {
+        return 1;
+    }
+    if (a.idade < b.idade) {
+        return -1;
+    }
+    if (a.idade == b.idade) {
+        return pesos[a.cargo] - pesos[b.cargo];
+    }
+    return 0;
+});
+
+console.log("Resultado D2 2 c:", resultadoD2_2_d);
