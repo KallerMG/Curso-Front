@@ -88,25 +88,22 @@ console.log("Resultado D2 1 b:", resultadoD2_1_b);
 
 
 /* const resultadoD2_2_c = colaboradores.sort((a, b) => {
-    let pesos = {
-        'back-end': 3,
-        'front-end': 2,
-        'designer': 4,
-        'estagiario': 1
-    };
     return pesos[a.cargo] - pesos[b.cargo];
 });
 
 console.log("Resultado D2 2 c:", resultadoD2_2_c); */
 
+const pesos = {
+    'back-end': 3,
+    'front-end': 2,
+    'designer': 4,
+    'estagiario': 1
+};
 const resultadoD2_2_d = colaboradores.sort((a, b) => {
-    let pesos = {
-        'back-end': 3,
-        'front-end': 2,
-        'designer': 4,
-        'estagiario': 1
-    };
-    if (a.idade > b.idade) {
+
+    return a.idade - b.idade || pesos[a.cargo] - pesos[b.cargo]
+
+    /* if (a.idade > b.idade) {
         return 1;
     }
     if (a.idade < b.idade) {
@@ -115,7 +112,7 @@ const resultadoD2_2_d = colaboradores.sort((a, b) => {
     if (a.idade == b.idade) {
         return pesos[a.cargo] - pesos[b.cargo];
     }
-    return 0;
+    return 0; */
 });
 
 console.log("Resultado D2 2 c:", resultadoD2_2_d);

@@ -60,7 +60,8 @@ console.log("Valor total das parcelas:", resultado_DE_b); */
 console.log("Forma desc", resultado_DE_c);
  */
 const resultado_DE_d = installments.sort((a, b) => {
-    return ((a.value - b.value) == 0) ? (b.installment_number - a.installment_number) : a.value - b.value
+    /* return ((a.value - b.value) == 0) ? (b.installment_number - a.installment_number) : a.value - b.value */
+    return a.value - b.valie || b.installment_number - b.installment_number
 });
 
 console.log("Forma crescente:", resultado_DE_d);
