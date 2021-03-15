@@ -1,70 +1,50 @@
-const installments = [
-    {
-        installment_number: 1,
-        value: 123.45,
-        status: 'Pago'
-    },
-    {
-        installment_number: 2,
-        value: 139.88,
-        status: 'Pago'
-    },
-    {
-        installment_number: 3,
-        value: 123.45,
-        status: 'Pago'
-    },
-    {
-        installment_number: 4,
-        value: 182.37,
-        status: 'Aberto'
-    },
-    {
-        installment_number: 5,
-        value: 133.93,
-        status: 'Aberto'
+const promisse_1 = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("A resolução do exec 1 foi feita");
+        }, 5000);
     }
-];
+    )
+};
 
-/* const resultado_DE_a = installments.reduce((acumulador, insta) => {
-    return acumulador + insta.value;
-}, 0)
-
-console.log("Valor total das parcelas:", resultado_DE_a.toFixed(2)); */
-
-/* const resultado_DE_b = installments.reduce((acc, insta) => {
-    if (insta.status == 'Pago') {
-        return {
-            total_pago: acc.total_pago + 1,
-            total_aberto: acc.total_aberto
-        };
-    } else {
-        return {
-            total_pago: acc.total_pago,
-            total_aberto: acc.total_aberto + 1
-        };
+const promisse_2 = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve("A resolução do exec 2 foi feita");
+        }, 3000);
     }
+    )
+};
 
-}, {
-    total_pago: 0,
-    total_aberto: 0
-})
+const promisse_3 = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject("A resolução do exec 3 não foi feita");
+        }, 4000);
+    }
+    )
+};
 
-console.log("Valor total das parcelas:", resultado_DE_b); */
+async function desafio5_2() {
+    try {
+        const res = await Promise.all([promisse_1(), promisse_2(), promisse_3()]);
+        console.log(res);
+    } catch (error) {
+        console.log(error);
+    }
+}
 
+desafio5_2();
 
-/* const resultado_DE_c = installments.sort((a, b) => {
-    return b.value - a.value;
-});
+async function desafio5_3() {
+    try {
+        const res = await Promise.all([promisse_1(), promisse_2()]);
+        console.log(res);
+    } catch (error) {
+        console.log(error);
+    } finally {
+        console.log("Final da execução");
+    }
+}
 
-console.log("Forma desc", resultado_DE_c);
- */
-const resultado_DE_d = installments.sort((a, b) => {
-    /* return ((a.value - b.value) == 0) ? (b.installment_number - a.installment_number) : a.value - b.value */
-    return a.value - b.valie || b.installment_number - b.installment_number
-});
-
-console.log("Forma crescente:", resultado_DE_d);
-
-
-
+desafio5_3();
