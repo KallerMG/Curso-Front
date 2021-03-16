@@ -1,50 +1,60 @@
-const promisse_1 = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve("A resolução do exec 1 foi feita");
-        }, 5000);
-    }
-    )
+const user = {
+    nome: 'Usuário',
+    idade: 25,
+    endereco: {
+        rua: 'Rua central',
+        numero: 1
+    },
+    projetos: ['Projeto 1', 'Projeto 2']
 };
 
-const promisse_2 = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve("A resolução do exec 2 foi feita");
-        }, 3000);
-    }
-    )
+const { nome } = user;
+console.log(nome);
+
+const { endereco: { rua } } = user;
+console.log(rua);
+
+const { projetos } = user;
+console.log(projetos);
+
+const { projetos: [, segunda] } = user;
+console.log(segunda);
+
+const students = [
+    { id: 1, name: 'John Doe', age: 23, scholarship: false },
+    { id: 2, name: 'Margoe Rose', age: 19, scholarship: true },
+    { id: 3, name: 'Kayle', age: 22, scholarship: true }
+];
+
+const [primeiro] = students;
+console.log(primeiro)
+
+const [, , terceiro] = students;
+console.log(terceiro)
+
+const [, seg] = students;
+const { name } = seg
+console.log(name);
+
+//Desafio 2
+
+function separadamente(arr) {
+    console.log(...arr)
 };
 
-const promisse_3 = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            reject("A resolução do exec 3 não foi feita");
-        }, 4000);
-    }
-    )
-};
-
-async function desafio5_2() {
-    try {
-        const res = await Promise.all([promisse_1(), promisse_2(), promisse_3()]);
-        console.log(res);
-    } catch (error) {
-        console.log(error);
-    }
+function mostra_nome({ nome }) {
+    console.log(nome);
 }
 
-desafio5_2();
-
-async function desafio5_3() {
-    try {
-        const res = await Promise.all([promisse_1(), promisse_2()]);
-        console.log(res);
-    } catch (error) {
-        console.log(error);
-    } finally {
-        console.log("Final da execução");
-    }
+function junta_obj(obj1, obj2) {
+    return { ...obj1, ...obj2 };
 }
 
-desafio5_3();
+function junta_array(arr1, arr2) {
+    return [...arr1, ...arr2]
+}
+
+
+
+
+
