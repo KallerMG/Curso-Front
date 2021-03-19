@@ -32,8 +32,7 @@ console.log(primeiro)
 const [, , terceiro] = students;
 console.log(terceiro)
 
-const [, seg] = students;
-const { name } = seg
+const [, { name }] = students;
 console.log(name);
 
 //Desafio 2
