@@ -1,0 +1,12 @@
+{
+  "name": "Curso-front",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/KallerMG/Curso-Front.git",
+  "author": "KallerMG <50585470+KallerMG@users.noreply.github.com>",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "date-fns": "^2.19.0"
+  }
+}
