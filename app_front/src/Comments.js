@@ -20,13 +20,12 @@ const Comments = () => {
       <h1>Comentarios vão ser aqui</h1>
       {comments.map((comment) => {
         return (
-          <div key={comment.id}>
-            <Comment
-              email={comment.email}
-              name={comment.name}
-              body={comment.body}
-            />
-          </div>
+          <Comment
+            key={comment.id}
+            email={comment.email}
+            name={comment.name}
+            body={comment.body}
+          />
         );
       })}
     </div>
