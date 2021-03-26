@@ -1,9 +1,9 @@
-const Comment = ({ dados }) => {
+const Comment = ({ email, body, name }) => {
   return (
     <div>
-      <h3>{dados.email}</h3>
-      <p>{dados.name}</p>
-      <p>{dados.body}</p>
+      <h3>{email}</h3>
+      <p>{name}</p>
+      <p>{body}</p>
     </div>
   );
 };

@@ -21,7 +21,11 @@ const Comments = () => {
       {comments.map((comment) => {
         return (
           <div key={comment.id}>
-            <Comment dados={comment} />
+            <Comment
+              email={comment.email}
+              name={comment.name}
+              body={comment.body}
+            />
           </div>
         );
       })}
