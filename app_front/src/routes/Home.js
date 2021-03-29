@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import logo from "./logo.svg";
-import Button from "./Button";
+import logo from "../images/logo.svg";
+import Button from "../components/Button";
 
-import "./App.css";
+import "../styles/Home.css";
 
 const Home = () => {
   const [texto_a, setTexto_a] = useState("Primeiramente ok");

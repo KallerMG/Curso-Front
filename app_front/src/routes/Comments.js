@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-import Comment from "./Comment";
+import Comment from "../components/Comment";
+
+import { getComments } from "../services/comments";
 
 const Comments = () => {
   const [comments, setComments] = useState([]);
 
+  const fetchComments = async () => {
+    const { data: comments } = await getComments();
+    setComments(comments);
+  };
+
   useEffect(() => {
-    const getComments = async () => {
-      const { data: comments } = await axios.get(
-        "https://jsonplaceholder.typicode.com/comments"
-      );
-      setComments(comments);
-    };
-    getComments();
+    fetchComments();
   }, []);
 
   return (
