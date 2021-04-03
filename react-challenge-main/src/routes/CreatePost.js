@@ -22,9 +22,9 @@ const CreatePost = () => {
     <div>
       <Form
         onSubmit={onSubmit}
-        titulo="Criar uma nova publicação"
+        titulo="Criar uma publicação"
         primary="Título"
-        secondary="Cancelar"
+        secondary="Descrição"
       />
     </div>
   );

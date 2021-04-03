@@ -1,8 +1,16 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
-import { H3 } from "../styles/form";
+import {
+  H3,
+  H1,
+  DivForm,
+  StyledTextField,
+  DivInput,
+  Formu,
+  ButtonForm,
+  DivButton,
+} from "../styles/form";
 
 import "../styles/style.css";
 
@@ -18,43 +26,47 @@ const Form = ({
 }) => {
   const { register, handleSubmit } = useForm();
   return (
-    <div>
-      <h1>{titulo}</h1>
-      <form className="container" onSubmit={handleSubmit(onSubmit)}>
-        <H3>{primary}</H3>
-        <TextField
-          id="outlined-basic"
-          label=""
-          variant="outlined"
-          size="small"
-          multiline
-          defaultValue={title}
-          inputProps={{ ref: register, name: "title" }}
-        />
-        <H3>{secondary}</H3>
-        <TextField
-          id="outlined-basic"
-          label=""
-          variant="outlined"
-          size="small"
-          multiline
-          defaultValue={body}
-          inputProps={{ ref: register, name: "body" }}
-        />
+    <DivForm>
+      <H1>{titulo}</H1>
+      <Formu onSubmit={handleSubmit(onSubmit)}>
         <TextField
           type="hidden"
           inputProps={{ ref: register, name: "id", value: id }}
         />
-        <div>
-          <Button type="submit" variant="contained" color="primary">
+        <DivInput>
+          <H3>{primary}</H3>
+          <StyledTextField
+            id="outlined-basic"
+            label=""
+            variant="outlined"
+            size="small"
+            multiline
+            defaultValue={title}
+            inputProps={{ ref: register, name: "title" }}
+          />
+        </DivInput>
+        <DivInput>
+          <H3>{secondary}</H3>
+          <StyledTextField
+            id="outlined-basic"
+            label=""
+            variant="outlined"
+            size="small"
+            multiline
+            defaultValue={body}
+            inputProps={{ ref: register, name: "body" }}
+          />
+        </DivInput>
+        <DivButton>
+          <ButtonForm type="submit" variant="contained" color="primary">
             {b}
-          </Button>
+          </ButtonForm>
           <Link to="/">
-            <Button variant="contained">Cancelar</Button>
+            <ButtonForm variant="contained">Cancelar</ButtonForm>
           </Link>
-        </div>
-      </form>
-    </div>
+        </DivButton>
+      </Formu>
+    </DivForm>
   );
 };
 
