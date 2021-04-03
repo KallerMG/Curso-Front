@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
+import { useHistory } from "react-router-dom";
 import { getPostsList, deletePost } from "../services/posts";
 
 import "../styles/style.css";
 
 const ListPosts = () => {
+  const history = useHistory();
   const [post, setPosts] = useState([]);
   const [open, setOpen] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -28,13 +30,21 @@ const ListPosts = () => {
 
   useEffect(() => {
     const handleGetPosts = async () => {
-      const response = await getPostsList();
+      let response = await getPostsList();
       setPosts(response.data);
       toast.success("Listagem de posts foi carregada com sucesso!!");
     };
 
     handleGetPosts();
   }, []);
+
+  const handleEditPost = (props) => {
+    /* history.push({ pathname: "/edit", postData: props }); */
+    history.push({
+      pathname: "/edit",
+      postData: { props },
+    });
+  };
 
   return (
     <>
@@ -46,7 +56,14 @@ const ListPosts = () => {
               <p className="text">{item.body}</p>
             </div>
             <div>
-              <button className="info">Editar Post</button>
+              <button
+                className="info"
+                onClick={() => {
+                  handleEditPost(item);
+                }}
+              >
+                Editar Post
+              </button>
               <button
                 className="error"
                 onClick={() => handleOpenModalDelete(item)}

@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 
 import Sidebar from "./components/Sidebar";
 
+import EditPost from "./routes/EditPost";
 import CreatePost from "./routes/CreatePost";
 import ListPosts from "./routes/ListPosts";
 
@@ -27,6 +28,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={ListPosts} />
         <Route path="/create" component={CreatePost} />
+        <Route path="/edit" component={EditPost} />
       </Switch>
     </div>
   </Router>

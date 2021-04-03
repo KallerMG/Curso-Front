@@ -5,8 +5,6 @@ import Form from "../components/Form";
 
 import { createPost } from "../services/posts";
 
-import "../styles/style.css";
-
 const CreatePost = () => {
   const history = useHistory();
 
@@ -21,9 +19,13 @@ const CreatePost = () => {
   };
 
   return (
-    <div className="container">
-      <h1>Criar uma nova publicação</h1>
-      <Form onSubmit={onSubmit} />
+    <div>
+      <Form
+        onSubmit={onSubmit}
+        titulo="Criar uma nova publicação"
+        primary="Título"
+        secondary="Cancelar"
+      />
     </div>
   );
 };
